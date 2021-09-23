@@ -9,23 +9,25 @@ var history = []
 func _ready():
 	# Set the initial state to the first child node
 	state = get_child(0)
-	_enter_state()
+	_enter_state(null)
 	
-func change_to(new_state):
+func change_to(new_state, params):
 	history.append(state.name)
 	state = get_node(new_state)
-	_enter_state()
+	_enter_state(params)
 
 func back():
 	if history.size() > 0:
 		state = get_node(history.pop_back())
-		_enter_state()
+		_enter_state(null)
 
-func _enter_state():
+func _enter_state(params):
 	if DEBUG:
 		print("Entering state: ", state.name)
 	# Give the new state a reference to this state machine script
 	state.fsm = self
+	if state.has_method("set_params"):
+		state.set_params(params)
 	state.enter()
 
 # Route Game Loop function calls to

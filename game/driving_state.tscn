@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/vehicles/paintYellow.material" type="Material" id=1]
+[ext_resource path="res://driving_state.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="Skin" id=2]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.901001, 0.433816, 0, -0.433816, 0.901001, 0, 3.79849, 4.28239 )
+fov = 100.0
+far = 110.0
+
+[node name="Placeholder" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Placeholder"]
+mesh = SubResource( 1 )
+skin = SubResource( 2 )
+material/0 = ExtResource( 1 )

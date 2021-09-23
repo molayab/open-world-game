@@ -3,6 +3,7 @@ class_name DrivingPlayableState
 
 var fsm: StateMachine
 var vehicle_scene: String
+var new_vehicle: Spatial
 
 func set_params(params):
 	if not params is String:
@@ -15,18 +16,11 @@ func enter():
 	var new_vehicle_scene = load(
 		"res://scenes/vehicles/" + vehicle_scene + ".tscn"
 	)
-			
-	var new_vehicle = new_vehicle_scene.instance()
-	new_vehicle.name = "Hello World"
 	
-	var should_clear = false
-	for child in get_children():
-		if child.name == "Hello World":
-			should_clear = true
-	
-	if should_clear:
+	if new_vehicle:
 		remove_child(new_vehicle)
-		
+			
+	new_vehicle = new_vehicle_scene.instance()
 	add_child(new_vehicle)
 	get_node("Camera").target = new_vehicle
 

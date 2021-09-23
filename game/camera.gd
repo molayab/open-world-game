@@ -1,8 +1,8 @@
 extends Camera
 
-export var lerp_speed = 3.0
+export var lerp_speed = 6.0
 export (NodePath) var target_path = null
-export (Vector3) var offset = Vector3(0, 2.5, 2.5)
+export (Vector3) var offset = Vector3(0, 2.0, 2.5)
 
 var target = null
 

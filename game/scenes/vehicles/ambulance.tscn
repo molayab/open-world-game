@@ -285,22 +285,24 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.418015, 0.623261, -1.5059 )
 
 [node name="Siren" type="Node" parent="ambulance"]
 
-[node name="S1" type="OmniLight" parent="ambulance/Siren"]
+[node name="Spatial" type="Spatial" parent="ambulance/Siren"]
+
+[node name="S1" type="OmniLight" parent="ambulance/Siren/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.294415, 1.40112, -0.755826 )
 light_color = Color( 0.882353, 0.0627451, 0.0627451, 1 )
 light_energy = 16.0
 
-[node name="S2" type="OmniLight" parent="ambulance/Siren"]
+[node name="S2" type="OmniLight" parent="ambulance/Siren/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29389, 1.40112, -0.755826 )
 light_color = Color( 0.027451, 0.235294, 0.937255, 1 )
 light_energy = 0.0
 
-[node name="S3" type="OmniLight" parent="ambulance/Siren"]
+[node name="S3" type="OmniLight" parent="ambulance/Siren/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29389, 1.72162, 1.45796 )
 light_color = Color( 0.027451, 0.235294, 0.937255, 1 )
 light_energy = 16.0
 
-[node name="S4" type="OmniLight" parent="ambulance/Siren"]
+[node name="S4" type="OmniLight" parent="ambulance/Siren/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299725, 1.70055, 1.45796 )
 light_color = Color( 0.882353, 0.0627451, 0.0627451, 1 )
 light_energy = 0.0
@@ -311,9 +313,10 @@ shape = SubResource( 4 )
 
 [node name="WheelFrontRight" type="VehicleWheel" parent="."]
 transform = Transform( 0.693441, 0, 0, 0, 1, 0, 0, 0, 1, 0.509363, 0.3, -1.01 )
+use_as_steering = true
 
 [node name="wheel_frontRight" type="MeshInstance" parent="WheelFrontRight"]
-transform = Transform( 1.44208, 0, 1.26071e-07, 0, 1, 0, 8.74228e-08, 0, -1, -0.229815, 0, 0 )
+transform = Transform( 1.44208, -1.50996e-07, 6.06227e-08, 2.17748e-07, 1, 0, 8.74228e-08, -9.15377e-15, -1, -0.229815, 0, 0 )
 mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
@@ -323,7 +326,7 @@ material/2 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, -1.01 )
 
 [node name="wheel_frontLeft" type="MeshInstance" parent="WheelFrontLeft"]
-transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -1, 0, 0, 0, 1, 1.50996e-07, 0, -1.50996e-07, 1, 0, 0, 0 )
 mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
@@ -331,9 +334,10 @@ material/2 = null
 
 [node name="WheelBackRight" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.3, 0.91 )
+use_as_traction = true
 
 [node name="wheel_backRight" type="MeshInstance" parent="WheelBackRight"]
-transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -5.96046e-08 )
+transform = Transform( 1, -1.50996e-07, 8.74228e-08, 1.50996e-07, 1, 0, 8.74228e-08, -1.32005e-14, -1, 0, 0, -5.96046e-08 )
 mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
@@ -341,9 +345,10 @@ material/2 = null
 
 [node name="WheelBackLeft" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, 0.91 )
+use_as_traction = true
 
 [node name="wheel_backLeft" type="MeshInstance" parent="WheelBackLeft"]
-transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.96046e-08 )
+transform = Transform( -1, 0, 0, 0, 1, 1.50996e-07, 0, -1.50996e-07, 1, 0, 0, -5.96046e-08 )
 mesh = SubResource( 5 )
 material/0 = null
 material/1 = null

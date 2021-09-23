@@ -9,9 +9,6 @@ var target = null
 func _ready():
 	if target_path:
 		target = get_node(target_path)
-		
-func set_target(target):
-	self.target = target
 
 func _physics_process(delta):
 	if !target:

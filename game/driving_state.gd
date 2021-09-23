@@ -1,5 +1,4 @@
 extends Node
-
 class_name DrivingPlayableState
 
 var fsm: StateMachine
@@ -16,20 +15,20 @@ func enter():
 	var new_vehicle_scene = load(
 		"res://scenes/vehicles/" + vehicle_scene + ".tscn"
 	)
-	
+			
 	var new_vehicle = new_vehicle_scene.instance()
-	var vehicle_placeholder = get_node("Placeholder")
+	new_vehicle.name = "Hello World"
 	
-	# Remove old one.
-	var parent = vehicle_placeholder.get_parent()
-	parent.remove_child(vehicle_placeholder)
-	vehicle_placeholder.call_deferred("free")
+	var should_clear = false
+	for child in get_children():
+		if child.name == "Hello World":
+			should_clear = true
 	
-	# Let's make the change.
-	new_vehicle.name = vehicle_placeholder.name
-	parent.add_child(new_vehicle)
-	vehicle_placeholder = new_vehicle
-	get_node("Camera").set_target(vehicle_placeholder)
+	if should_clear:
+		remove_child(new_vehicle)
+		
+	add_child(new_vehicle)
+	get_node("Camera").target = new_vehicle
 
 func _input(event):
 	if event is InputEventKey and event.scancode == KEY_K and not event.echo:
@@ -39,9 +38,4 @@ func _input(event):
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass

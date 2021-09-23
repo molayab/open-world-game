@@ -10,19 +10,25 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "DrivingPlayableState",
+"language": "GDScript",
+"path": "res://driving_state.gd"
+}, {
+"base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://state_machine.gd"
 } ]
 _global_script_class_icons={
+"DrivingPlayableState": "",
 "StateMachine": ""
 }
 
 [application]
 
 config/name="Game"
-run/main_scene="res://main_world.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://world.tscn"
+config/icon="res://assets/icon.png"
 
 [input]
 

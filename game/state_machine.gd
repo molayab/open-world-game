@@ -4,22 +4,15 @@ class_name StateMachine
 const DEBUG = true
 
 var state: Object
-var history = []
 
 func _ready():
 	# Set the initial state to the first child node
-	state = get_child(0)
+	state = get_child(0).get_child(0)
 	_enter_state(null)
 	
 func change_to(new_state, params):
-	history.append(state.name)
-	state = get_node(new_state)
+	state = get_node(new_state).get_child(0)
 	_enter_state(params)
-
-func back():
-	if history.size() > 0:
-		state = get_node(history.pop_back())
-		_enter_state(null)
 
 func _enter_state(params):
 	if DEBUG:

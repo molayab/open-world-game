@@ -199,7 +199,7 @@ surfaces/3 = {
 "vertex_count": 30
 }
 
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="BoxShape" id=4]
 
 [sub_resource type="ArrayMesh" id=5]
 surfaces/0 = {
@@ -240,7 +240,7 @@ surfaces/2 = {
 }
 
 [node name="VehicleBody" type="VehicleBody"]
-mass = 100.0
+mass = 150.0
 can_sleep = false
 script = ExtResource( 2 )
 
@@ -277,12 +277,6 @@ material/1 = null
 material/2 = null
 material/3 = null
 
-[node name="LightRight" type="SpotLight" parent="ambulance"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375312, 0.623261, -1.5059 )
-
-[node name="LightLeft" type="SpotLight" parent="ambulance"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.418015, 0.623261, -1.5059 )
-
 [node name="Siren" type="Node" parent="ambulance"]
 
 [node name="Spatial" type="Spatial" parent="ambulance/Siren"]
@@ -305,15 +299,22 @@ light_energy = 16.0
 [node name="S4" type="OmniLight" parent="ambulance/Siren/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299725, 1.70055, 1.45796 )
 light_color = Color( 0.882353, 0.0627451, 0.0627451, 1 )
-light_energy = 0.0
+light_energy = 16.0
+
+[node name="LightRight" type="SpotLight" parent="ambulance/Siren/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375312, 0.623261, -1.5059 )
+
+[node name="LightLeft" type="SpotLight" parent="ambulance/Siren/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.418015, 0.623261, -1.5059 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.13849, 0, 0.888498, 0 )
+transform = Transform( 1, 0, 0, 0, 0.65, 0, 0, 0, 1.6, 0, 0.888498, 0 )
 shape = SubResource( 4 )
 
 [node name="WheelFrontRight" type="VehicleWheel" parent="."]
 transform = Transform( 0.693441, 0, 0, 0, 1, 0, 0, 0, 1, 0.509363, 0.3, -1.01 )
 use_as_steering = true
+wheel_roll_influence = 1.0
 
 [node name="wheel_frontRight" type="MeshInstance" parent="WheelFrontRight"]
 transform = Transform( 1.44208, -1.50996e-07, 6.06227e-08, 2.17748e-07, 1, 0, 8.74228e-08, -9.15377e-15, -1, -0.229815, 0, 0 )
@@ -324,6 +325,7 @@ material/2 = null
 
 [node name="WheelFrontLeft" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, -1.01 )
+wheel_roll_influence = 1.0
 
 [node name="wheel_frontLeft" type="MeshInstance" parent="WheelFrontLeft"]
 transform = Transform( -1, 0, 0, 0, 1, 1.50996e-07, 0, -1.50996e-07, 1, 0, 0, 0 )
@@ -335,6 +337,8 @@ material/2 = null
 [node name="WheelBackRight" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.3, 0.91 )
 use_as_traction = true
+wheel_roll_influence = 1.0
+wheel_friction_slip = 5.0
 
 [node name="wheel_backRight" type="MeshInstance" parent="WheelBackRight"]
 transform = Transform( 1, -1.50996e-07, 8.74228e-08, 1.50996e-07, 1, 0, 8.74228e-08, -1.32005e-14, -1, 0, 0, -5.96046e-08 )
@@ -346,6 +350,8 @@ material/2 = null
 [node name="WheelBackLeft" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, 0.91 )
 use_as_traction = true
+wheel_roll_influence = 1.0
+wheel_friction_slip = 5.0
 
 [node name="wheel_backLeft" type="MeshInstance" parent="WheelBackLeft"]
 transform = Transform( -1, 0, 0, 0, 1, 1.50996e-07, 0, -1.50996e-07, 1, 0, 0, -5.96046e-08 )

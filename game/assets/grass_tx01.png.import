@@ -2,15 +2,15 @@
 
 importer="texture_3d"
 type="Texture3D"
-path="res://.import/grass_tx01.png-f20be84eca2967acb738a2a464369193.tex3d"
+path="res://.import/grass_tx01.png-5ce67d85b89906629e6a2a8195b7f67d.tex3d"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grass_tx01.png"
-dest_files=[ "res://.import/grass_tx01.png-f20be84eca2967acb738a2a464369193.tex3d" ]
+source_file="res://assets/grass_tx01.png"
+dest_files=[ "res://.import/grass_tx01.png-5ce67d85b89906629e6a2a8195b7f67d.tex3d" ]
 
 [params]
 

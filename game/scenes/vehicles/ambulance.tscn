@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/vehicles/lightFront.material" type="Material" id=1]
-[ext_resource path="res://scenes/vehicles/ambulance.gd" type="Script" id=2]
+[ext_resource path="res://scenes/vehicles/scripts/ambulance.gd" type="Script" id=2]
 [ext_resource path="res://assets/vehicles/_defaultMat.material" type="Material" id=3]
 [ext_resource path="res://assets/vehicles/window.material" type="Material" id=4]
 [ext_resource path="res://assets/vehicles/lightBlue.material" type="Material" id=5]

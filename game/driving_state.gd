@@ -8,7 +8,7 @@ var new_vehicle: Spatial
 func set_params(params):
 	if not params is String:
 		# None vehicle selected. Using the default one.
-		vehicle_scene = "firetruck"
+		vehicle_scene = "truck"
 		return 
 	vehicle_scene = params
 

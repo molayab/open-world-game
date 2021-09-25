@@ -201,6 +201,7 @@ shape = SubResource( 3 )
 
 [node name="WheelFrontRight" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.3, -0.95 )
+use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 1.0
 suspension_stiffness = 10.0
@@ -215,6 +216,8 @@ material/2 = null
 
 [node name="WheelFrontLeft" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, -0.95 )
+use_as_traction = true
+use_as_steering = true
 wheel_roll_influence = 1.0
 suspension_stiffness = 10.0
 suspension_max_force = 12000.0

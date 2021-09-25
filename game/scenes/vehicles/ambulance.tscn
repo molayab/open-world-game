@@ -245,6 +245,7 @@ linear_velocity = Vector3( 5, 2.5, 0 )
 script = ExtResource( 2 )
 
 [node name="Ambulance" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.127379, 0 )
 
 [node name="tmpParent" type="Spatial" parent="Ambulance"]
 

@@ -8,7 +8,7 @@ var new_vehicle: Spatial
 func set_params(params):
 	if not params is String:
 		# None vehicle selected. Using the default one.
-		vehicle_scene = "ambulance"
+		vehicle_scene = "firetruck"
 		return 
 	vehicle_scene = params
 
@@ -23,10 +23,11 @@ func enter():
 	new_vehicle = new_vehicle_scene.instance()
 	add_child(new_vehicle)
 	get_node("Camera").target = new_vehicle
+	
+	new_vehicle.is_controlling = true
 
 func _input(event):
-	if Input.is_action_just_released("spawn_ambulance"):
-		fsm.change_to("DrivingPlayableState", "ambulance")
+	pass
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():

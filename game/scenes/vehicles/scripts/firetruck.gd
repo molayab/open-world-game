@@ -1,12 +1,12 @@
 extends Vehicle
 
 func _ready():
-	MAX_ENGINE_FORCE = 250
-	STEER_SPEED = 1
-	STEER_LIMIT = 0.6
+	MAX_ENGINE_FORCE = 280
+	STEER_SPEED = 0.6
+	STEER_LIMIT = 0.65
 
 func _physics_process(_delta):
-	$Ambulance/Siren/Spatial.global_transform = global_transform
+	$Firetruck/Siren/Spatial.global_transform = global_transform
 
 func turn_on_siren():
 	pass # create a timer for handling siren lights
